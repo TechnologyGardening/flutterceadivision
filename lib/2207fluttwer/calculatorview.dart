@@ -38,44 +38,56 @@ class CalculatorPart extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
-          child: ElevatedButton(
-            onPressed: null,
-            child: Text("MC"),
+          child: SizedBox.expand(
+            child: ElevatedButton(
+              onPressed: null,
+              child: Text("MC"),
+            ),
           ),
         ),
         SizedBox(width: 5),
         Expanded(
-          child: ElevatedButton(
-            onPressed: null,
-            child: Text("MR"),
+          child: SizedBox.expand(
+            child: ElevatedButton(
+              onPressed: null,
+              child: Text("MR"),
+            ),
           ),
         ),
         SizedBox(width: 5),
         Expanded(
-          child: ElevatedButton(
-            onPressed: null,
-            child: Text("M+"),
+          child: SizedBox.expand(
+            child: ElevatedButton(
+              onPressed: null,
+              child: Text("M+"),
+            ),
           ),
         ),
         SizedBox(width: 5),
         Expanded(
-          child: ElevatedButton(
-            onPressed: null,
-            child: Text("M-"),
+          child: SizedBox.expand(
+            child: ElevatedButton(
+              onPressed: null,
+              child: Text("M-"),
+            ),
           ),
         ),
         SizedBox(width: 5),
         Expanded(
-          child: ElevatedButton(
-            onPressed: null,
-            child: Text("MS"),
+          child: SizedBox.expand(
+            child: ElevatedButton(
+              onPressed: null,
+              child: Text("MS"),
+            ),
           ),
         ),
         SizedBox(width: 5),
         Expanded(
-          child: ElevatedButton(
-            onPressed: null,
-            child: Text("M^"),
+          child: SizedBox.expand(
+            child: ElevatedButton(
+              onPressed: null,
+              child: Text("M^"),
+            ),
           ),
         ),
       ],
@@ -88,37 +100,47 @@ class CalculatorPart extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
-          child: ElevatedButton(
-            onPressed: null,
-            child: Text("MC"),
+          child: SizedBox.expand(
+            child: ElevatedButton(
+              onPressed: null,
+              child: Text("MC"),
+            ),
           ),
         ),
         SizedBox(width: 5),
         Expanded(
-          child: ElevatedButton(
-            onPressed: null,
-            child: Text("MR"),
+          child: SizedBox.expand(
+            child: ElevatedButton(
+              onPressed: null,
+              child: Text("MR"),
+            ),
           ),
         ),
         SizedBox(width: 5),
         Expanded(
-          child: ElevatedButton(
-            onPressed: null,
-            child: Text("M+"),
+          child: SizedBox.expand(
+            child: ElevatedButton(
+              onPressed: null,
+              child: Text("M+"),
+            ),
           ),
         ),
         SizedBox(width: 5),
         Expanded(
-          child: ElevatedButton(
-            onPressed: null,
-            child: Text("M-"),
+          child: SizedBox.expand(
+            child: ElevatedButton(
+              onPressed: null,
+              child: Text("M-"),
+            ),
           ),
         ),
         SizedBox(width: 5),
         Expanded(
-          child: ElevatedButton(
-            onPressed: null,
-            child: Text("MS"),
+          child: SizedBox.expand(
+            child: ElevatedButton(
+              onPressed: null,
+              child: Text("MS"),
+            ),
           ),
         ),
       ],
