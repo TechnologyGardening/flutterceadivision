@@ -9,9 +9,10 @@ class StopwatchExperiemnt extends StatefulWidget {
 }
 
 class _StopwatchExperiemntState extends State<StopwatchExperiemnt> {
-  int seconds = 0;
+  double seconds = 0;
   late Timer timer;
   bool isTicking = false;
+  int millis = 0;
   String _secondtoText() => seconds <= 1 ? 'Second' : 'Seconds';
   @override
   Widget build(BuildContext context) {
@@ -65,10 +66,10 @@ class _StopwatchExperiemntState extends State<StopwatchExperiemnt> {
   }
 
   void _starttimer() {
-    timer = Timer.periodic(const Duration(seconds: 1), _onTick);
+    timer = Timer.periodic(const Duration(milliseconds: 100), _onTick);
     setState(() {
       isTicking = true;
-      seconds = 0;
+      millis = 0;
     });
   }
 
@@ -82,7 +83,8 @@ class _StopwatchExperiemntState extends State<StopwatchExperiemnt> {
   void _onTick(Timer timer) {
     if (mounted) {
       setState(() {
-        seconds++;
+        millis += 100;
+        seconds = millis / 1000;
       });
     }
   }
