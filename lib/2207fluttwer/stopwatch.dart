@@ -13,6 +13,7 @@ class _StopwatchExperiemntState extends State<StopwatchExperiemnt> {
   late Timer timer;
   bool isTicking = false;
   int millis = 0;
+  final laps = <int>[];
   String _secondtoText() => seconds <= 1 ? 'Second' : 'Seconds';
   @override
   Widget build(BuildContext context) {
@@ -54,6 +55,15 @@ class _StopwatchExperiemntState extends State<StopwatchExperiemnt> {
                   ),
                   child: const Text("Stop"),
                 ),
+                const SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: _lapClick,
+                  style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(Colors.amber),
+                    foregroundColor: MaterialStatePropertyAll(Colors.white),
+                  ),
+                  child: const Text("Lap"),
+                ),
               ],
             ),
           ],
@@ -71,6 +81,17 @@ class _StopwatchExperiemntState extends State<StopwatchExperiemnt> {
       isTicking = true;
       millis = 0;
     });
+  }
+
+// final laps = <int>[];
+  void _lapClick() {
+    if (isTicking) {
+      setState(() {
+        laps.add(millis);
+        millis = 0;
+      });
+    }
+    print(laps);
   }
 
   void _stoptimer() {
