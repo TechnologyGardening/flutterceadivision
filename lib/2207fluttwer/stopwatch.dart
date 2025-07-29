@@ -25,49 +25,53 @@ class _StopwatchExperiemntState extends State<StopwatchExperiemnt> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Center(
-              child: Text(
-                '$seconds ${_secondtoText()}',
-                style: Theme.of(context).textTheme.headlineMedium,
+            Expanded(
+              child: Center(
+                child: Text(
+                  '$seconds ${_secondtoText()}',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: isTicking ? null : _starttimer,
-                  style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.green),
-                    foregroundColor: MaterialStatePropertyAll(Colors.white),
-                  ),
-                  child: const Text("Start"),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: isTicking ? _stoptimer : null,
-                  style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.red),
-                    foregroundColor: MaterialStatePropertyAll(Colors.white),
-                  ),
-                  child: const Text("Stop"),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: _lapClick,
-                  style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.amber),
-                    foregroundColor: MaterialStatePropertyAll(Colors.white),
-                  ),
-                  child: const Text("Lap"),
-                ),
-              ],
-            ),
+            Expanded(child: controlPanel()),
+            Expanded(child: _buildDisplay()),
           ],
         ));
+  }
+
+  Row controlPanel() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        ElevatedButton(
+          onPressed: isTicking ? null : _starttimer,
+          style: const ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.green),
+            foregroundColor: MaterialStatePropertyAll(Colors.white),
+          ),
+          child: const Text("Start"),
+        ),
+        const SizedBox(width: 10),
+        ElevatedButton(
+          onPressed: isTicking ? _stoptimer : null,
+          style: const ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.red),
+            foregroundColor: MaterialStatePropertyAll(Colors.white),
+          ),
+          child: const Text("Stop"),
+        ),
+        const SizedBox(width: 10),
+        ElevatedButton(
+          onPressed: _lapClick,
+          style: const ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.amber),
+            foregroundColor: MaterialStatePropertyAll(Colors.white),
+          ),
+          child: const Text("Lap"),
+        ),
+      ],
+    );
   }
 
   @override
@@ -108,6 +112,17 @@ class _StopwatchExperiemntState extends State<StopwatchExperiemnt> {
         seconds = millis / 1000;
       });
     }
+  }
+
+  Widget _buildDisplay() {
+    return ListView(
+      children: [
+        for (int i in laps)
+          ListTile(
+            title: Text('Lap ${laps.indexOf(i) + 1}: ${i / 1000} seconds'),
+          ),
+      ],
+    );
   }
 
   @override
