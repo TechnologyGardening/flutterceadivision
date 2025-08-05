@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterceadivision/1507flutter/columnexperiment.dart';
 import 'package:flutterceadivision/1507flutter/containerexperiment.dart';
 import 'package:flutterceadivision/2207fluttwer/calculatorview.dart';
+import 'package:flutterceadivision/2207fluttwer/loginpage.dart';
 import 'package:flutterceadivision/2207fluttwer/stopwatch.dart';
 
 void main() {
@@ -14,7 +15,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: StopwatchExperiemnt()
+        debugShowCheckedModeBanner: false, home: LoginScreen()
+        // home: StopwatchExperiemnt()
         // home: CalculatorPart()
         // home: ColumnExperiment(),
         // home: CustomContainer(),

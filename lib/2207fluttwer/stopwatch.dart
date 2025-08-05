@@ -84,6 +84,7 @@ class _StopwatchExperiemntState extends State<StopwatchExperiemnt> {
     setState(() {
       isTicking = true;
       millis = 0;
+      laps.clear();
     });
   }
 
