@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterceadivision/2207fluttwer/stopwatch.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -75,9 +76,10 @@ class _LoginScreenState extends State<LoginScreen> {
   void _validateInput() {
     final form = _formKey.currentState;
     if (form?.validate() == true) {
-      print('Form is validated');
       name = t1.text;
       email = t2.text;
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (_) => StopwatchExperiemnt(name: name, email: email)));
     } else {
       print('Some values are missing in the form');
     }
